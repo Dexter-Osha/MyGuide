@@ -1,0 +1,18 @@
+{
+  "notes": [
+    {
+      "text": "POOP",
+      "id": 1,
+      "is_section": true,
+      "collapsed": true
+    },
+    {
+      "text": "97050892_PanLight_ErrorGuide_I-GB.pdf",
+      "id": 2,
+      "is_section": false,
+      "parent_section_id": 1,
+      "pdf_path": "C:\\MyGuide\\97050892_PanLight_ErrorGuide_I-GB.pdf"
+    }
+  ],
+  "favorites": []
+}
