@@ -52,3 +52,29 @@ class NotesManager:
         if not self.notes:
             return 1
         return max(n["id"] for n in self.notes) + 1
+
+    def save_theme(self, theme):
+        # Load existing data if file exists
+        data = {}
+        if os.path.exists(self.data_file):
+            with open(self.data_file, "r") as f:
+                try:
+                    data = json.load(f)
+                except:
+                    data = {}
+
+        data["theme"] = theme
+        os.makedirs(os.path.dirname(self.data_file), exist_ok=True)
+        with open(self.data_file, "w") as f:
+            json.dump(data, f, indent=2)
+
+    def load_theme(self):
+        if os.path.exists(self.data_file):
+            with open(self.data_file, "r") as f:
+                try:
+                    data = json.load(f)
+                    return data.get("theme", "Light")
+                except:
+                    return "Light"
+        return "Light"
+
